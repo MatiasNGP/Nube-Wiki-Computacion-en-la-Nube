@@ -19,4 +19,4 @@ Si deseas correr este proyecto en tu propia máquina para hacer modificaciones, 
 
 1. **Clona el repositorio:**
    ```bash
-   git clone [https://github.com/TU_USUARIO/TU_REPO.git](https://github.com/TU_USUARIO/TU_REPO.git)
+   git clone (https://github.com/MatiasNGP/Nube-Wiki-Computacion-en-la-Nube)
