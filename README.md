@@ -1,16 +1,22 @@
-# React + Vite
+# Nube Wiki - Computación en la Nube
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una wiki interactiva e informativa dedicada a explorar los conceptos fundamentales, modelos de servicio y arquitecturas de la Computación en la Nube (Cloud Computing).
 
-Currently, two official plugins are available:
+**[Ver proyecto en vivo](https://nube-wiki-computacion-en-la-nube.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Sobre el proyecto
 
-## React Compiler
+Este proyecto fue desarrollado para centralizar información clave sobre servicios Cloud (IaaS, PaaS, SaaS) y modelos de despliegue (Nube Pública, Privada, Híbrida y Multicloud). Es ideal como guía rápida o material de estudio para temas de arquitectura e infraestructura web.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+* **Frontend:** React (inicializado con Vite)
+* **Despliegue y Hosting:** Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación y uso local
+
+Si deseas correr este proyecto en tu propia máquina para hacer modificaciones, sigue estos pasos:
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone [https://github.com/TU_USUARIO/TU_REPO.git](https://github.com/TU_USUARIO/TU_REPO.git)
