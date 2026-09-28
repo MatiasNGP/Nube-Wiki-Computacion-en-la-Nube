@@ -173,10 +173,19 @@ function App() {
   const [activeCategory, setActiveCategory] = useState('todas')
 
   useEffect(() => {
-    const updateRoute = () => setRoute(getRoute())
+    const updateRoute = () => {
+      setRoute(getRoute())
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
     window.addEventListener('hashchange', updateRoute)
     return () => window.removeEventListener('hashchange', updateRoute)
   }, [])
+
+  const selectCategory = (category) => {
+    setActiveCategory(category)
+    window.location.hash = '#/'
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
 
   const normalizedQuery = query.trim().toLocaleLowerCase('es')
   const visibleArticles = articles.filter((article) => {
@@ -206,11 +215,11 @@ function App() {
         <aside className="wiki-sidebar" aria-label="Navegación de la biblioteca">
           <a className="sidebar-home" href="#/"><Icon name="home" /> Inicio de la wiki</a>
           <p className="sidebar-label">EXPLORAR POR TEMA</p>
-          <button className={`category-link ${activeCategory === 'todas' ? 'is-active' : ''}`} type="button" onClick={() => { setActiveCategory('todas'); window.location.hash = '#/' }}>
+          <button className={`category-link ${activeCategory === 'todas' ? 'is-active' : ''}`} type="button" onClick={() => selectCategory('todas')}>
             <Icon name="grid" /><span>Todos los artículos</span><b>{articles.length}</b>
           </button>
           {categories.map((category) => (
-            <button className={`category-link ${activeCategory === category.id ? 'is-active' : ''}`} key={category.id} type="button" onClick={() => { setActiveCategory(category.id); window.location.hash = '#/' }}>
+            <button className={`category-link ${activeCategory === category.id ? 'is-active' : ''}`} key={category.id} type="button" onClick={() => selectCategory(category.id)}>
               <Icon name={category.id === 'fundamentos' ? 'book' : category.id === 'arquitectura' ? 'layers' : category.id === 'seguridad' ? 'shield' : 'activity'} />
               <span>{category.label}</span><b>{categoryCounts[category.id]}</b>
             </button>
@@ -225,7 +234,7 @@ function App() {
 
         <main className="wiki-main">
           {route.type === 'article' && selectedArticle ? (
-            <ArticlePage article={selectedArticle} onCategory={(category) => { setActiveCategory(category); window.location.hash = '#/' }} />
+            <ArticlePage article={selectedArticle} onCategory={selectCategory} />
           ) : route.type === 'article' ? (
             <div className="not-found"><span>404 / ARTÍCULO NO ENCONTRADO</span><h1>Esta página no está en el índice.</h1><a href="#/">Volver a la biblioteca <ArrowIcon /></a></div>
           ) : (
